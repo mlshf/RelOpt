@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<system limitcost="1000">
+	<module num="0" qall="0.99" qd="0.99" qrv="0.99" trecov="3" ttest="2" tvote="1">
+		<tool name="none"/>
+		<tool name="nvp01"/>
+		<tool name="nvp11"/>
+		<tool name="rb11"/>
+		<sw cost="22" num="0" rel="0.871543559522"/>
+		<sw cost="26" num="1" rel="0.899819115246"/>
+		<sw cost="29" num="2" rel="0.93832543219"/>
+		<hw cost="10" num="0" rel="0.98032863684"/>
+		<time hwnum="0" swnum="0" t="7"/>
+		<time hwnum="0" swnum="1" t="6"/>
+		<time hwnum="0" swnum="2" t="10"/>
+	</module>
+	<module num="1" qall="0.99" qd="0.99" qrv="0.99" trecov="3" ttest="2" tvote="1">
+		<tool name="none"/>
+		<tool name="nvp01"/>
+		<tool name="nvp11"/>
+		<tool name="rb11"/>
+		<sw cost="29" num="0" rel="0.941136784718"/>
+		<sw cost="29" num="1" rel="0.960222192926"/>
+		<sw cost="22" num="2" rel="0.91614839514"/>
+		<hw cost="18" num="0" rel="0.886246036184"/>
+		<time hwnum="0" swnum="0" t="3"/>
+		<time hwnum="0" swnum="1" t="4"/>
+		<time hwnum="0" swnum="2" t="5"/>
+	</module>
+	<module num="2" qall="0.99" qd="0.99" qrv="0.99" trecov="3" ttest="2" tvote="1">
+		<tool name="none"/>
+		<tool name="nvp01"/>
+		<tool name="nvp11"/>
+		<tool name="rb11"/>
+		<sw cost="29" num="0" rel="0.88216644649"/>
+		<sw cost="29" num="1" rel="0.969524439736"/>
+		<sw cost="14" num="2" rel="0.879465763581"/>
+		<hw cost="15" num="0" rel="0.930127830323"/>
+		<time hwnum="0" swnum="0" t="8"/>
+		<time hwnum="0" swnum="1" t="10"/>
+		<time hwnum="0" swnum="2" t="9"/>
+	</module>
+	<link dst="2" src="0" vol="5"/>
+</system>
