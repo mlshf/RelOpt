@@ -14,6 +14,8 @@ from Common.AlgConfig import AlgConfig
 from GA.GA import GA
 from GA.HGA import HGA
 from Greedy.Greedy import Greedy
+from EAC.EAC import EAC
+from EAC.EACConfig import EACConfig
 
 import xml.dom.minidom, time, os
 try:
@@ -82,6 +84,8 @@ class MainWindow(QMainWindow):
         root = dom.childNodes[0]
         if self.ui.algorithm.currentIndex()==0 or self.ui.algorithm.currentIndex()==1:
             self.algconfig = GAConfig()
+        elif self.ui.algorithm.currentIndex() == 3:
+            self.algconfig = EACConfig()
         self.algconfig.LoadFromXmlNode(root)
 
     def Run(self):
@@ -123,6 +127,8 @@ class MainWindow(QMainWindow):
             algorithm = HGA()
         elif algidx==2:
             algorithm = Greedy()
+        elif algidx==3:
+            algorithm = EAC()
         Algorithm.result_filename = self.ui.result_filename.text()
         for i in range(self.ui.execNum.value()):
             if algorithm.algconf.metamodel:

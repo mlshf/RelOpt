@@ -1,0 +1,15 @@
+<alg type = "EAC" 
+     max_iter = "2000" 
+	 ant_size = "20"
+	 q0 = "0.9"
+	 beta = "1"
+	 rho = "0.1"
+	 rho_dash = "0.1"
+	 z = "S/2"
+	 tau0 = "0.000001"
+	 use_local_search = "1"
+	 use_heuristic = "1"
+	 heuristic_function = "3"
+	 priority_grade_function = "2"
+>
+</alg>
