@@ -1,4 +1,4 @@
 # RelOpt
 Merge Versions of RelOpt
 
-Версия Василенко. На эту ветвь будем сливать Software Reliability.
+Версия Василенко слитая с веткой Software Reliability.
