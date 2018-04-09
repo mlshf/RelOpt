@@ -231,7 +231,11 @@ class SysConfig:
     def loadXML(self, fileName):
         self.modules = []
         self.links = []
-        f = open(unicode(fileName), "r")
+        
+        '''
+        In Vasilenko version it was: f = open(unicode(fileName), "r")
+        '''
+        f = open(fileName, "r")
         dom = xml.dom.minidom.parse(f)
         for root in dom.childNodes:
             if root.tagName == "system":

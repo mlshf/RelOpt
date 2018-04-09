@@ -8,16 +8,11 @@ import random, copy, time
 class GA(Algorithm):
     def __init__(self):
         Algorithm.__init__(self)
-        # wtf
         self.population = []
-        # wtf
         self.iterWithoutChange = 0
-        # wtf
-        self.candidate = None
+        self.Candidate = None
 
     def Step(self):
-        # wtf
-
         self._select()
         self._recombine()
         self._mutate()
@@ -25,29 +20,24 @@ class GA(Algorithm):
 
     def Run(self):
         self.Clear()
-        # time counter (itarations counter), counted by this algorithm
+         # time counter (iterations counter), counted by this algorithm
         Algorithm.timecounts = 0
         # time counter (iteration counter), counted by
         Algorithm.simcounts = 0
         Algorithm.time = time.time()
-        # wtf
         for i in range(self.algconf.popNum):
             s = System()
             s.GenerateRandom(True)
             self.population.append(s)
-        # wtf
         if Algorithm.algconf.metamodel:
             Algorithm.algconf.metamodel.Update()
-        # wtf
         self.population.sort(key=lambda x: x.rel * x.penalty, reverse = True)
         while not self._checkStopCondition():
-            # wtf
             self.Step()
             print self.currentIter, self.currentSolution
         print "Best solution: ", self.currentSolution
         print "--------------------------------------\n"
         Algorithm.time = time.time() - Algorithm.time
-        # wtf
         self.stat.AddExecution(Execution(self.currentSolution, self.currentIter, Algorithm.time, Algorithm.timecounts, Algorithm.simcounts))
 
     def Clear(self):
@@ -57,7 +47,6 @@ class GA(Algorithm):
         self.candidate = None
 
     def _mutate(self):
-        # wtf
         for s in self.population[int((1.0-self.algconf.mutPercent.cur) * self.algconf.popNum):]:
             if random.random() <= self.algconf.Pmut.cur:
                 k = random.randint(0, Module.conf.modNum-1)
@@ -77,8 +66,6 @@ class GA(Algorithm):
                 s.Update()
             
     def _select(self):
-        # wtf
-
         probabilities = []
         sum = 0.0 
         for s in self.population:
@@ -96,8 +83,6 @@ class GA(Algorithm):
         self.population.sort(key=lambda x: x.rel * x.penalty, reverse = True)
 
     def _recombine(self):
-        # wtf crossover
-
         if Module.conf.modNum == 1:
             return
         new_pop = []
@@ -126,14 +111,12 @@ class GA(Algorithm):
         not_use_metamodel = Algorithm.algconf.metamodel==None or random.random() <= self.algconf.pop_control_percent
         for s in self.population:
             if not_use_metamodel:
-                # wtf
                 if self.candidate:
                     self.candidate.Update(use_metamodel=False)
                     if self.candidate.CheckConstraints() and (self.currentSolution == None or self.candidate.rel > self.currentSolution.rel):
                             self.currentSolution = copy.deepcopy(self.candidate)
                             self.iterWithoutChange = 0
                 s.Update(use_metamodel=False)
-                # wtf
                 if s.CheckConstraints() and (self.currentSolution == None or s.rel > self.currentSolution.rel):
                     self.currentSolution = copy.deepcopy(s)
                     self.iterWithoutChange = 0
@@ -147,18 +130,14 @@ class GA(Algorithm):
             Algorithm.algconf.metamodel.Update()
 
     def _checkStopCondition(self):
-        # wtf
-
         if self.currentSolution != None and self.iterWithoutChange > self.algconf.maxIter:
             self.currentSolution.Update(use_metamodel=False)
             if self.currentSolution.CheckConstraints():
                 return True
 
         if self.currentSolution == None and self.iterWithoutChange >= 1000:
-            # wtf
             self.currentSolution = System()
             self.currentSolution.rel = 0
-            # wtf
             for m in Module.conf.modules:
                 self.currentSolution.modules.append(NONE(m.num))
             return True
