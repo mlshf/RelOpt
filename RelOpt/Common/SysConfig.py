@@ -232,10 +232,8 @@ class SysConfig:
         self.modules = []
         self.links = []
         
-        '''
-        In Vasilenko version it was: f = open(unicode(fileName), "r")
-        '''
-        f = open(fileName, "r")
+        f = open(unicode(fileName, "r")
+
         dom = xml.dom.minidom.parse(f)
         for root in dom.childNodes:
             if root.tagName == "system":
