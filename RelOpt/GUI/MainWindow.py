@@ -14,6 +14,8 @@ from Common.AlgConfig import AlgConfig
 from GA.GA import GA
 from GA.HGA import HGA
 from Greedy.Greedy import Greedy
+from EAC.EAC import EAC
+from EAC.EACConfig import EACConfig
 
 from IA.IA import IA
 from IA.IAConfig import IAConfig
@@ -86,9 +88,11 @@ class MainWindow(QMainWindow):
         kkk = self.ui.algorithm.currentIndex()
         if self.ui.algorithm.currentIndex()==0 or self.ui.algorithm.currentIndex()==1:
             self.algconfig = GAConfig()
+        elif self.ui.algorithm.currentIndex() == 3:
+            self.algconfig = EACConfig()
         # Here I specify initialization of Algorithm Configuartion properites
         # self.ui.algorithm.currentIndex - returns user choice from field "Algorithm choice"
-        if self.ui.algorithm.currentIndex() == 4:
+        elif self.ui.algorithm.currentIndex() == 4:
             self.algconfig = IAConfig()
         self.algconfig.LoadFromXmlNode(root)
 
@@ -131,6 +135,8 @@ class MainWindow(QMainWindow):
             algorithm = HGA()
         elif algidx==2:
             algorithm = Greedy()
+        elif algidx==3:
+            algorithm = EAC()
         elif algidx==4:
             # Here I create instance of my algorithm
             # self.ui.algorithm.currentIndex that is algidx - returns user choice from field "Algorithm choice"

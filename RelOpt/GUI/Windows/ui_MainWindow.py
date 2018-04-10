@@ -41,11 +41,9 @@ class Ui_MainWindow(object):
         self.algorithm.addItem(_fromUtf8(""))
         self.algorithm.addItem(_fromUtf8(""))
         self.algorithm.addItem(_fromUtf8(""))
-
-        # I added one more item here
         self.algorithm.addItem(_fromUtf8(""))
-        self.algorithm.setCurrentIndex(4)
-
+        #Next line added in Vasilenko version, but I dont understand why, so I comment it
+        #self.algorithm.setCurrentIndex(4)
         self.verticalLayout.addWidget(self.algorithm)
         self.label_2 = QtGui.QLabel(self.centralwidget)
         self.label_2.setObjectName(_fromUtf8("label_2"))
@@ -291,10 +289,9 @@ class Ui_MainWindow(object):
         self.algorithm.setItemText(0, _translate("MainWindow", "Genetic Algorithm", None))
         self.algorithm.setItemText(1, _translate("MainWindow", "Hybrid Genetic Algorithm", None))
         self.algorithm.setItemText(2, _translate("MainWindow", "Greedy Algorithm", None))
-        self.algorithm.setItemText(3, _translate("MainWindow", "Simulated Annealing", None))
+        self.algorithm.setItemText(3,  _translate("MainWindow","Efficient Ant Colony", None))
         # I added my new mega-algorithm here
         self.algorithm.setItemText(4, _translate("MainWindow", "Immune Algorithm", None))
-
         self.label_2.setText(_translate("MainWindow", "Number of executions:", None))
         self.label_4.setText(_translate("MainWindow", "Check Time:", None))
         self.checktime_yes.setText(_translate("MainWindow", "Yes", None))
