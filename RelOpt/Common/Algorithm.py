@@ -1,19 +1,16 @@
 from Common.Statistics import Statistics
+
 class Algorithm:
     '''Base Algoritm Class.
     '''
-    # This is a variable that will contain instance of Configuration for algorithm created by somebody in MainWindow.py
     algconf = None
-
     timecounts = 0
     simcounts = 0
     time = None
     result_filename = "result.csv"
 
     def __init__(self):
-        # Indicates current best solution in algorithm
         self.currentSolution = None
-        # Indicates number of iterations in the algorithm
         self.currentIter = 0
         self.stat = Statistics()
 

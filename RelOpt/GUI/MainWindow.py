@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.sysConfigFilter = self.tr("System Configuration files (*.xml)")
         self.algConfigFilter = self.tr("Algorithm Configuration files (*.xml)")
-        self.ui.result_filename.setText("result"+str(time.time())+".csv")
+        self.ui.result_filename.setText("resultGA"+str(time.time())+".csv")
         self.best = None
         translator = QTranslator(qApp)
         translator.load("GUI/Windows/Translations/relopt_ru.qm")
@@ -263,7 +263,6 @@ class MainWindow(QMainWindow):
         self.ui.limittimes.setEnabled(True)
         if self.sysconfig == None:
             return
-
         c = self.sysconfig.getLimitTimes() 
         GADialog.meta = True  
         SLGADialog.meta = True 		

@@ -1,4 +1,4 @@
-from Penalty import Penalty
+from Penalty import Penalty 
 
 class TimeConstraints:
     '''Class for time constraints.
