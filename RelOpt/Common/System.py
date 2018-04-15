@@ -94,7 +94,6 @@ class System:
         self.penalty = 1.0
         for c in self.constraints:
             self.penalty *= c.GetPenalty(self)
-            #print self.penalty 
 
     def CheckConstraints(self):
         '''

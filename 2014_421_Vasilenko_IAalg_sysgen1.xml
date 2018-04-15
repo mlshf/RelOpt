@@ -1,0 +1,12 @@
+<alg    popNum="30"
+        identicalThreshold="0.01"
+        selectionBest="25"
+        mapFunc="x"
+        maxIter="1000"
+        maxIterWithoutChange="100"
+        mutPercent="0.95"
+        Pmut="0.9"
+        crossPercent="0.95"
+        Pcross="0.9"
+        cloneNum="10">
+</alg>
