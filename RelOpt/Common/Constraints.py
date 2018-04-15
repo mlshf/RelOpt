@@ -1,3 +1,5 @@
+from Penalty import Penalty
+
 class TimeConstraints:
     '''Class for time constraints.
     :param constraints: list of deadlines.
@@ -22,7 +24,7 @@ class TimeConstraints:
         res = 1.0
         for m,l in zip(system.modules,self.limitTimes):
             if (m.time > l):
-                res *= float(l)/m.time
+                res *= Penalty().getPenalty(m.time,l)
         return res
 
 class CostConstraints:
@@ -36,14 +38,18 @@ class CostConstraints:
         '''Checks if cost constaraint is satisfied
         :param system: object of 'System' class.
         '''
-        return system.cost < self.limitCost
+        return system.cost <= self.limitCost
 
     def GetPenalty(self,system):
         '''Gets penalty.
         :param system: object of 'System' class.
         :returns: Float penalty.
         '''
-        return float(self.limitCost)/system.cost if system.cost > self.limitCost else 1.0
+        #print('cooost = ',system.cost - self.limitCost)
+        if system.cost > self.limitCost:
+            return Penalty().getPenalty(system.cost,self.limitCost)
+        else:
+            return 1.0
 
 class RelConstraints:
     '''Class for reliability constraint.
@@ -63,4 +69,7 @@ class RelConstraints:
         :param system: object of 'System' class.
         :returns: Float penalty.
         '''
-        return float(system.rel)/self.limitRel if system.rel < self.limitRel else 1.0
+        if system.rel < self.limitRel:
+            return Penalty().getPenalty(system.rel,self.limitRel)
+        else:
+            return 1.0

@@ -103,15 +103,17 @@ class System:
         for c in self.constraints:
             ok = c.CheckConstraints(self)
             if not ok:
-                break
+                return False
         return ok
 
-    def GenerateRandom(self, checkConstraints):
+    def GenerateRandom(self, checkConstraints, tl = "none"):
         '''
         Generates random solution.
         :param checkConstraints: if generated solution must satisfy constraints.
         '''
-        for j in range(Algorithm.algconf.maxGenIter):
+        #for j in range(Algorithm.algconf.maxGenIter):
+        #print(self.constraints)
+        while(True):
             self.modules = []
             for i in range(Module.conf.modNum):
                 type = random.choice(Module.conf.modules[i].tools)
@@ -123,18 +125,24 @@ class System:
                     self.modules.append(NVP11(i))
                 else:
                     self.modules.append(RB11(i))
-            self.Update(False)
-            if not checkConstraints or self.CheckConstraints():
-                break
-
+            #
+            if tl != "none":
+                if self.modules not in tl:
+                    self.Update(False)
+                    if not checkConstraints or self.CheckConstraints():    
+                        break  
+                else:
+                    break                
+            else:
+                self.Update(False)  
+                if not checkConstraints or self.CheckConstraints():
+                    break                
+            #
+            
     def __str__(self):
-        s = "Rel = %0.6f Cost = %d [" %(self.rel,self.cost)
+        s = "\nReliability = %0.6f; \nCost = %d;\n" %(self.rel,self.cost)
         for i in self.modules:
-            s+= str(i.time) + ","
-        s = s[:-1]+"]"  
-        #print "\n"
-        #for i in self.modules:
-        #    s += str(i)
+            s += "Module %s, Time:%s;\n"%(str(i), str(i.time))
         return s
 
     def toSchedule(self):

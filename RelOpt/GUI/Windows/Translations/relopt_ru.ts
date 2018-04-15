@@ -162,6 +162,16 @@
         <translation>Алгоритм Имитации Отжига</translation>
     </message>
     <message>
+        <location filename="MainWindow.ui" line="60"/>
+        <source>Simulated Annealing</source>
+        <translation>Мегагибрид</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.ui" line="65"/>
+        <source>Simulated Annealing</source>
+        <translation>Алгоритм Поиска с Запретами</translation>
+    </message>
+    <message>
         <location filename="MainWindow.ui" line="63"/>
         <source>Number of executions:</source>
         <translation>Количество запусков:</translation>
@@ -187,14 +197,14 @@
         <translation>Файл с настройками алгоритма:</translation>
     </message>
     <message>
-        <location filename="MainWindow.ui" line="167"/>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
         <location filename="MainWindow.ui" line="155"/>
         <source>System config file:</source>
         <translation>Файл со структурой РВС РВ:</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.ui" line="167"/>
+        <source>...</source>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="MainWindow.ui" line="178"/>
@@ -310,6 +320,41 @@
         <location filename="MainWindow.ui" line="574"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.ui" line="571"/>
+        <source>Edit</source>
+        <translation>Штрафные функции:</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.ui" line="581"/>
+        <source>Edit</source>
+        <translation>Экспоненциальная</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.ui" line="586"/>
+        <source>Edit</source>
+        <translation>Логарифмическая</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.ui" line="591"/>
+        <source>Edit</source>
+        <translation>Степенная</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.ui" line="596"/>
+        <source>Edit</source>
+        <translation>Отсутствующая</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.ui" line="657"/>
+        <source>Edit</source>
+        <translation>Выбрать параметры работы алгоритма</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.ui" line="664"/>
+        <source>Edit</source>
+        <translation>Показать карту зависимостей по данным</translation>
     </message>
 </context>
 <context>

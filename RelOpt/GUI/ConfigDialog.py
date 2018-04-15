@@ -29,5 +29,7 @@ class ConfigDialog(QDialog):
                 "nvp01":self.ui.nvp01.isChecked(),
                 "nvp11":self.ui.nvp11.isChecked(),
                 "rb11":self.ui.rb11.isChecked(),
-                "linkprob":self.ui.linkprob.value()
+                "linkprob":self.ui.linkprob.value(),
+                "TimePercentConstraits":self.ui.TP.value(),
+                "CostPercentConstraits":self.ui.CP.value()
                 }

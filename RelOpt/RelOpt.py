@@ -3,13 +3,13 @@ from GUI.MainWindow import MainWindow
 from PyQt4 import QtGui
 
 from Common.SysConfig import SysConfig
-from GA.GAConfig import GAConfig
+from Algorithms.GA.GAConfig import GAConfig
 from Common.Constraints import CostConstraints, TimeConstraints
 from Common.System import System
 from Common.Module import Module
 from Common.Algorithm import Algorithm
 from Common.AlgConfig import AlgConfig
-from GA.HGA import HGA
+from Algorithms.GA.HGA import HGA
 
 try:
     from Metamodels.NeuralNetwork import NeuralNetwork

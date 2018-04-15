@@ -35,7 +35,9 @@ class NONE(Module):
     def __init__(self, num, hw = [], sw = []):
         if hw == [] and sw == []:
             hw = [random.randint(0, len(self.conf.modules[num].hw)-1)]
+            #print hw, '\n'
             sw = [random.randint(0, len(self.conf.modules[num].sw)-1)]
+            #print sw, '\n'
         Module.__init__(self, num, hw, sw)
 
     def toSchedule(self, schedule):
@@ -56,7 +58,7 @@ class NONE(Module):
     def __str__(self):
         '''Converts module to string. So we can 'print module'
         '''
-        return "\t"+str(self.num)+ ". None:" + str(self.hw) + str(self.sw) + "\n"
+        return str(self.num + 1) + ". MOO:None(HW:" + str(self.hw) + ",SW:" + str(self.sw) +')' + ", rel = %0.6f"%(self.rel)
 
 
 class NVP01(Module):
@@ -103,7 +105,7 @@ class NVP01(Module):
         schedule.tasks.append(Task("t"+str(self.num), self.execTime, "p"+str(self.num), 0))
 
     def __str__(self):
-        return "\t"+str(self.num)+ ". NVP01:" + str(self.hw) + str(self.sw) + "\n"
+        return str(self.num + 1) + ". MOO:NVP01(HW:" + str(self.hw) + ",SW:" + str(self.sw) + ")" + ", rel = %0.6f"%(self.rel)
 
 
 class NVP11(Module):
@@ -185,7 +187,7 @@ class NVP11(Module):
 
 
     def __str__(self):
-        return "\t"+str(self.num)+ ". NVP11:" + str(self.hw) + str(self.sw) + "\n"
+        return str(self.num + 1) + ". MOO:NVP11(HW:" + str(self.hw) + ",SW:" + str(self.sw) + ")" + ", rel = %0.6f"%(self.rel)
 
 
 class RB11(Module):
@@ -246,4 +248,4 @@ class RB11(Module):
         schedule.links.append(Link("t"+str(self.num)+"_2", "t"+str(self.num)+"_snd", self.conf.modules[self.num].output))
 
     def __str__(self):
-        return "\t"+str(self.num)+ ". RB11:" + str(self.hw) + str(self.sw) + "\n"
+        return str(self.num + 1)+ ". MOO:RB11(HW:" + str(self.hw) + ",SW:" + str(self.sw) + ")" + ", rel = %0.6f"%(self.rel)

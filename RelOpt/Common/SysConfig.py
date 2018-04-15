@@ -29,6 +29,7 @@ class ModConfig:
         self.dep = []
         self.input = 0
         self.output = 0
+        self.TPC = 60
 
     def GetConfigsNum(self):
         res = 0
@@ -55,9 +56,15 @@ class ModConfig:
                     times.append(self.times[i][j])
         times.sort()
         mintime = times[0]
-        maxtime = max(2*times[len(times)-1]+2*self.ttest+self.trecov,
-                      3*times[len(times)-1]+3*self.tvote)
-        return (mintime,maxtime)
+        temp1 = 2*times[len(times)-1]+2*self.ttest+self.trecov
+        temp2 = 3*times[len(times)-1]+3*self.tvote
+        if temp1 >= temp2:
+            maxtime = temp1
+            moo = 2
+        else:
+            maxtime = temp2
+            moo = 3
+        return ((mintime,maxtime),moo)
 
     def costInterval(self):
         '''Computes minimum and maximum costs for module.'''
@@ -160,6 +167,7 @@ class ModConfig:
             self.times[i] = range(param["hwnum"])
             for j in self.times[i]:
                 self.times[i][j] = random.randint(param["mintime"], param["maxtime"])
+        self.TPC = param["TimePercentConstraits"]
 
 class Link:
     def __init__(self, src, dst, vol):
@@ -175,6 +183,7 @@ class SysConfig:
         self.limitcost = []
         self.limitrel = []
         self.terminals = []
+        self.CPC = 60
 
     def findLink(self, src, dst):
         for l in self.links:
@@ -205,12 +214,14 @@ class SysConfig:
                 start_min = self.modules[m1.num].min_time
             if start_max < self.modules[m1.num].max_time:
                 start_max = self.modules[m1.num].max_time
-        range = self.modules[num].timeInterval()
+        tmp = self.modules[num].timeInterval()
+        range = tmp[0]
+        moo = tmp[1]
         transfer = 0
         for d in self.modules[num].dst:
             transfer += d[1]
         self.modules[num].min_time = start_min + range[0] + transfer
-        self.modules[num].max_time = start_max + range[1] + transfer
+        self.modules[num].max_time = start_max + range[1] + moo * transfer
         l[num]=True
 
     def timeInterval(self):
@@ -231,9 +242,7 @@ class SysConfig:
     def loadXML(self, fileName):
         self.modules = []
         self.links = []
-        
         f = open(unicode(fileName, "r"))
-
         dom = xml.dom.minidom.parse(f)
         for root in dom.childNodes:
             if root.tagName == "system":
@@ -279,6 +288,7 @@ class SysConfig:
                 if m1.num < m2.num and random.random() < param["linkprob"]:
                     l = Link(m1,m2,random.randint(param["minvol"], param["maxvol"]))
                     self.links.append(l)
+        self.CPC = param["CostPercentConstraits"]
         self.__buildConfig()
 
 

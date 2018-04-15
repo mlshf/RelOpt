@@ -1,13 +1,16 @@
 from Common.Constraints import CostConstraints, RelConstraints, TimeConstraints
 
+import os
+
 class Execution:
     '''Class for statistics of one execution'''
-    def __init__(self, solution, iter, time, timecounts, simcounts):
+    def __init__(self, solution, iter, time, timecounts, simcounts, tlhc = "none"):
         self.solution = solution
         self.iter = iter
         self.time = time
         self.timecounts = timecounts
         self.simcounts = simcounts
+        self.tlhc = tlhc
 
 class Statistics:
     def __init__(self):
@@ -20,7 +23,8 @@ class Statistics:
         '''Print statistics to csv-file'''
         if self.execs==[]:
             return
-        f = open(filename, "w")
+        nm = os.path.join("Results", filename)
+        f = open(nm, "w")
         for c in self.execs[0].solution.constraints:
             if isinstance(c, CostConstraints):
                 f.write("Limit Cost:;%d;\n" % c.limitCost)
@@ -29,7 +33,10 @@ class Statistics:
             elif isinstance(c, TimeConstraints):
                 f.write("Limit Times:;")
                 f.write(str(c.limitTimes))
-        f.write("\nNum;Rel;Cost;Times;IterNum;Time(sec);GetTime_num;Sim_num;\n")
+        f.write("\nNum;Rel;Cost;Times;IterNum;Time(sec);GetTime_num;Sim_num;")
+        if self.execs[0].tlhc != "none":
+            f.write("Hits in tl;")
+        f.write("\n")
         num = 0
         minRel = maxRel = self.execs[0].solution.rel
         sumRel = 0.0
@@ -41,12 +48,17 @@ class Statistics:
         sumsc = 0
         mintime = maxtime = self.execs[0].time
         sumtime = 0
+        sumhits = 0
         for e in self.execs:
             sumRel += e.solution.rel
             sumIter += e.iter
             sumtc += e.timecounts
             sumsc += e.simcounts
             sumtime += e.time
+            if e.tlhc != "none":
+                sumhits += e.tlhc
+            else:
+                sumhits = -1
             if e.solution.rel > maxRel:
                 maxRel = e.solution.rel
             elif e.solution.rel < minRel:
@@ -78,12 +90,20 @@ class Statistics:
             f.write(str(e.iter)+";")
             f.write(str(e.time)+";")
             f.write(str(e.timecounts)+";")
-            f.write(str(e.simcounts)+";\n")
+            f.write(str(e.simcounts)+";")
+            if e.tlhc != "none":
+                f.write(str(e.tlhc)+";")
+            f.write("\n")
             num += 1
-        f.write(";\nMin rel:;Max rel:;Avg rel:;Min iter:;Max iter:;Avg iter:;Min tc:;Max tc:;Avg tc:;Min sc:;Max sc:;Avg sc:;Min time:;Max time:;Avg time:;\n")
+        f.write(";\nMin rel:;Max rel:;Avg rel:;Min iter:;Max iter:;Avg iter:;Min tc:;Max tc:;Avg tc:;Min sc:;Max sc:;Avg sc:;Min time:;Max time:;Avg time:;")
+        if sumhits != -1:
+            f.write("Avg hits in tl:;")
+        f.write("\n")
         f.write(str(minRel)+";"+str(maxRel)+";"+str(sumRel/num)+";"+
                 str(minIter)+";"+str(maxIter)+";"+str(sumIter/num)+";"+
                 str(mintc)+";"+str(maxtc)+";"+str(sumtc/num)+";"+
                 str(minsc)+";"+str(maxsc)+";"+str(sumsc/num)+";"+
                 str(mintime)+";"+str(maxtime)+";"+str(sumtime/num)+";")
+        if sumhits != -1:
+            f.write(str(sumhits/num)+";")
         f.close()

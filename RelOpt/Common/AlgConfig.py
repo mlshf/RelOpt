@@ -4,7 +4,7 @@ class AlgConfig:
     def __init__(self):
         self.use_metamodel = False
         #Max number of attempts to generate random solution
-        self.maxGenIter = 10
+        self.maxGenIter = 100
         self.metamodel = None
 
     def LoadFromXmlNode(self, node):

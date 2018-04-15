@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>482</width>
-    <height>422</height>
+    <width>497</width>
+    <height>490</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="1" column="1">
      <layout class="QVBoxLayout" name="verticalLayout_6">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_11">
@@ -55,6 +55,36 @@
                 <string>Simulated Annealing</string>
                </property>
               </item>
+              <item>
+               <property name="text">
+                <string>Hybrid of all!</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Tabu Search Algorithm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Tabu Search Simulated Annealing</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Tabu Search Random Algorithm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Random Algorithm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Self-learning Genetic Algorithm</string>
+               </property>
+              </item>
              </widget>
             </item>
             <item>
@@ -77,275 +107,43 @@
            </layout>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <item>
-             <widget class="QLabel" name="label_4">
-              <property name="text">
-               <string>Check Time:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="checktime_yes">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="text">
-               <string>Yes</string>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="checktime_no">
-              <property name="text">
-               <string>No</string>
-              </property>
-              <property name="checked">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item>
-             <spacer name="verticalSpacer">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_5">
-              <property name="text">
-               <string>File with algorithm settings:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
-              <item>
-               <widget class="QLineEdit" name="algconfname"/>
-              </item>
-              <item>
-               <widget class="QToolButton" name="toolButton">
-                <property name="text">
-                 <string>...</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_6">
-              <property name="text">
-               <string>System config file:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout">
-              <item>
-               <widget class="QLineEdit" name="sysconfname"/>
-              </item>
-              <item>
-               <widget class="QToolButton" name="toolButton_2">
-                <property name="text">
-                 <string>...</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_15">
-            <property name="text">
-             <string>Result filename:</string>
+           <widget class="Line" name="line_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="result_filename"/>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>System config file:</string>
+            </property>
+           </widget>
           </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_5">
+           <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QLabel" name="label_7">
+             <widget class="QLineEdit" name="sysconfname"/>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_2">
               <property name="text">
-               <string>System Configuration:</string>
+               <string>...</string>
               </property>
              </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_8">
-              <item>
-               <widget class="QLabel" name="label_9">
-                <property name="text">
-                 <string>Min Cost:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="mincost">
-                <property name="text">
-                 <string>--</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer name="horizontalSpacer_4">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_9">
-              <item>
-               <widget class="QLabel" name="label_8">
-                <property name="text">
-                 <string>Max Cost:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="maxcost">
-                <property name="text">
-                 <string>--</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer name="horizontalSpacer_3">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_7">
-              <item>
-               <widget class="QLabel" name="label_10">
-                <property name="text">
-                 <string>Cost Limit:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="limitcost"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_5">
-              <item>
-               <widget class="QLabel" name="label_12">
-                <property name="text">
-                 <string>Min Times:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="mintime">
-                <property name="text">
-                 <string>--</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer name="horizontalSpacer_6">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_4">
-              <item>
-               <widget class="QLabel" name="label_11">
-                <property name="text">
-                 <string>Max Times:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="maxtime">
-                <property name="text">
-                 <string>--</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer name="horizontalSpacer_5">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_6">
-              <item>
-               <widget class="QLabel" name="label_13">
-                <property name="text">
-                 <string>Times Limits:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="limittimes"/>
-              </item>
-             </layout>
             </item>
            </layout>
           </item>
@@ -394,82 +192,469 @@
            </layout>
           </item>
           <item>
-           <widget class="QCheckBox" name="use_metamodels">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="Line" name="line_10">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_15">
             <property name="text">
-             <string>Use metamodels</string>
+             <string>Result filename:</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>Metamodel:</string>
+           <widget class="QLineEdit" name="result_filename"/>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="Line" name="line_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="metamodel">
-            <property name="enabled">
-             <bool>false</bool>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>Stop Conditions:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_16">
+                <item>
+                 <widget class="QCheckBox" name="MI">
+                  <property name="text">
+                   <string>Maximal Number Of Iterations:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="maxIter">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>1000000</number>
+                  </property>
+                  <property name="value">
+                   <number>30</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_17">
+                <item>
+                 <widget class="QCheckBox" name="MIWCH">
+                  <property name="text">
+                   <string>Maximal Number Of Iterations Without :</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="maxIterWCH">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>500000</number>
+                  </property>
+                  <property name="value">
+                   <number>15</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_18">
+                <item>
+                 <widget class="QCheckBox" name="MR">
+                  <property name="text">
+                   <string>Minimal Reliability:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="MinRel">
+                  <property name="decimals">
+                   <number>4</number>
+                  </property>
+                  <property name="maximum">
+                   <double>1.000000000000000</double>
+                  </property>
+                  <property name="singleStep">
+                   <double>0.000100000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>0.500000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_5">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
             <item>
-             <property name="text">
-              <string>Averaging</string>
-             </property>
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>System Configuration:</string>
+              </property>
+             </widget>
             </item>
             <item>
-             <property name="text">
-              <string>KNearestNeighbours</string>
-             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <item>
+                 <widget class="QLabel" name="label_9">
+                  <property name="text">
+                   <string>Min Cost:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="mincost">
+                  <property name="text">
+                   <string>--</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_9">
+                <item>
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>Max Cost:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="maxcost">
+                  <property name="text">
+                   <string>--</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item>
+                 <widget class="QLabel" name="label_10">
+                  <property name="text">
+                   <string>Cost Limit:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="limitcost"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </item>
             <item>
-             <property name="text">
-              <string>Neural Network</string>
-             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Check Time:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="checktime_yes">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>Yes</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <property name="checked">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="checktime_no">
+                <property name="text">
+                 <string>No</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
             <item>
-             <property name="text">
-              <string>Support Vector Regression</string>
-             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_9">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QLabel" name="label_12">
+                  <property name="text">
+                   <string>Min Times:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="mintime">
+                  <property name="text">
+                   <string>--</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_6">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_12">
+                <item>
+                 <widget class="QLabel" name="label_11">
+                  <property name="text">
+                   <string>Max Times:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="maxtime">
+                  <property name="text">
+                   <string>--</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_9">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QLabel" name="label_13">
+                  <property name="text">
+                   <string>Times Limits:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="limittimes"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </item>
-            <item>
-             <property name="text">
-              <string>Linear Regression</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Random</string>
-             </property>
-            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_14">
-            <property name="text">
-             <string>Population control percent:</string>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
-           </widget>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
-           <widget class="QSpinBox" name="popControl">
-            <property name="enabled">
-             <bool>false</bool>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Penalty Function:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QComboBox" name="penalty">
+                <item>
+                 <property name="text">
+                  <string>Exponent</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Logarithm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Power</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>None</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="number">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="mouseTracking">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
-            <property name="maximum">
-             <number>100</number>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
             </property>
-            <property name="singleStep">
-             <number>10</number>
-            </property>
-            <property name="value">
-             <number>50</number>
-            </property>
-           </widget>
+           </spacer>
           </item>
          </layout>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line_9">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -489,18 +674,14 @@
         <item>
          <widget class="QPushButton" name="pushButton">
           <property name="text">
-           <string>Run</string>
+           <string>Set Algorithm Parameters</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="metamodels_button">
+         <widget class="QPushButton" name="pushButton_4">
           <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset resource="resources.qrc">
-            <normaloff>:/pics/pics/chart_line.png</normaloff>:/pics/pics/chart_line.png</iconset>
+           <string>Show System Links</string>
           </property>
          </widget>
         </item>
@@ -521,6 +702,34 @@
       </item>
      </layout>
     </item>
+    <item row="2" column="1">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="Line" name="line_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="Line" name="line_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="Line" name="line_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -528,7 +737,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>482</width>
+     <width>497</width>
      <height>21</height>
     </rect>
    </property>
@@ -583,79 +792,15 @@
    <sender>pushButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>Run()</slot>
+   <slot>SetAlgParameters()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>240</x>
-     <y>393</y>
+     <x>261</x>
+     <y>447</y>
     </hint>
     <hint type="destinationlabel">
-     <x>264</x>
-     <y>289</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>toolButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>OpenAlgConf()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>192</x>
-     <y>261</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>454</x>
-     <y>190</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>toolButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>OpenSysConf()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>192</x>
-     <y>311</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>454</x>
-     <y>212</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>algconfname</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>LoadAlgConf()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>158</x>
-     <y>262</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sysconfname</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>LoadSysConf()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>87</x>
-     <y>312</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>350</y>
+     <x>265</x>
+     <y>362</y>
     </hint>
    </hints>
   </connection>
@@ -666,12 +811,12 @@
    <slot>Random()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>328</x>
-     <y>238</y>
+     <x>151</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel">
-     <x>481</x>
-     <y>144</y>
+     <x>191</x>
+     <y>134</y>
     </hint>
    </hints>
   </connection>
@@ -682,11 +827,11 @@
    <slot>SaveSysConf()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>369</x>
-     <y>236</y>
+     <x>232</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel">
-     <x>496</x>
+     <x>347</x>
      <y>275</y>
     </hint>
    </hints>
@@ -698,12 +843,12 @@
    <slot>InputCostLimit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>335</x>
-     <y>119</y>
+     <x>472</x>
+     <y>157</y>
     </hint>
     <hint type="destinationlabel">
-     <x>501</x>
-     <y>33</y>
+     <x>278</x>
+     <y>32</y>
     </hint>
    </hints>
   </connection>
@@ -714,12 +859,12 @@
    <slot>InputTimeLimits()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>298</x>
-     <y>200</y>
+     <x>463</x>
+     <y>298</y>
     </hint>
     <hint type="destinationlabel">
-     <x>507</x>
-     <y>321</y>
+     <x>284</x>
+     <y>322</y>
     </hint>
    </hints>
   </connection>
@@ -730,11 +875,11 @@
    <slot>no_checked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>42</x>
-     <y>189</y>
+     <x>473</x>
+     <y>225</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-17</x>
+     <x>0</x>
      <y>263</y>
     </hint>
    </hints>
@@ -746,60 +891,156 @@
    <slot>yes_checked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>56</x>
-     <y>164</y>
+     <x>473</x>
+     <y>202</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-21</x>
+     <x>0</x>
      <y>238</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>use_metamodels</sender>
-   <signal>stateChanged(int)</signal>
+   <sender>toolButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OpenSysConf()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>287</x>
+     <y>189</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>347</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sysconfname</sender>
+   <signal>textChanged(QString)</signal>
    <receiver>MainWindow</receiver>
    <slot>LoadSysConf()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
-     <y>265</y>
+     <x>149</x>
+     <y>181</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-42</x>
-     <y>127</y>
+     <x>0</x>
+     <y>342</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>use_metamodels</sender>
-   <signal>clicked()</signal>
+   <sender>penalty</sender>
+   <signal>currentIndexChanged(int)</signal>
    <receiver>MainWindow</receiver>
-   <slot>use_metamodels_checked()</slot>
+   <slot>changedPenalty()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>421</x>
-     <y>253</y>
+     <x>380</x>
+     <y>388</y>
     </hint>
     <hint type="destinationlabel">
-     <x>546</x>
-     <y>253</y>
+     <x>124</x>
+     <y>350</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>metamodels_button</sender>
-   <signal>clicked()</signal>
+   <sender>number</sender>
+   <signal>textEdited(QString)</signal>
    <receiver>MainWindow</receiver>
-   <slot>ShowMetamodelRes()</slot>
+   <slot>editPen()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>271</x>
-     <y>383</y>
+     <x>473</x>
+     <y>388</y>
     </hint>
     <hint type="destinationlabel">
-     <x>280</x>
-     <y>432</y>
+     <x>393</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>algorithm</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>AlgChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>67</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MI</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>use_StopConditionMaxIter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>344</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>129</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MIWCH</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>use_StopConditionMaxIterWCH()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>373</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>188</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MR</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>use_StopConditionMinRel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>107</x>
+     <y>398</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showLinks()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>445</y>
     </hint>
    </hints>
   </connection>
@@ -816,7 +1057,16 @@
   <slot>SaveSysConf()</slot>
   <slot>no_checked()</slot>
   <slot>yes_checked()</slot>
-  <slot>use_metamodels_checked()</slot>
   <slot>ShowMetamodelRes()</slot>
+  <slot>SetAlgParameters()</slot>
+  <slot>changedPenalty()</slot>
+  <slot>editPen()</slot>
+  <slot>editStopCondition()</slot>
+  <slot>AlgChanged()</slot>
+  <slot>use_StopConditionMaxIter()</slot>
+  <slot>use_StopConditionMaxIterWCH()</slot>
+  <slot>use_StopConditionMinRel()</slot>
+  <slot>use_StopConditionMaxWorkTime()</slot>
+  <slot>showLinks()</slot>
  </slots>
 </ui>

@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+
+# Resource object code
+#
+# Created: Ср 18. май 02:31:48 2016
+#      by: The Resource Compiler for PyQt (Qt v4.8.6)
+#
+# WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore
 
