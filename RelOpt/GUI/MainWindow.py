@@ -20,6 +20,10 @@ from GUI.TSDialog import TSDialog
 from GUI.TSSADialog import TSSADialog
 from GUI.TSRADialog import TSRADialog
 from GUI.RADialog import RADialog
+from GUI.PSODialog import PSODialog
+from GUI.FADialog import FADialog
+from GUI.BSODialog import BSODialog
+from GUI.BADialog import BADialog
 
 import xml.dom.minidom, time, os
 
@@ -141,7 +145,19 @@ class MainWindow(QMainWindow):
         elif algidx==9:
              win = SLGADialog()
              SLGADialog.execNum = self.ui.execNum.value()			 
-        
+        elif algidx==10:
+            win = PSODialog()
+            PSODialog.execNum = self.ui.execNum.value()
+        elif algidx==11:
+            win = FADialog()
+            FADialog.execNum = self.ui.execNum.value()
+        elif algidx==12:
+            win = BSODialog()
+            BSODialog.execNum = self.ui.execNum.value()
+        elif algidx==13:
+            win = BADialog()
+            BADialog.execNum = self.ui.execNum.value()
+
         win.exec_()
         
         try:
@@ -302,6 +318,14 @@ class MainWindow(QMainWindow):
             self.ui.result_filename.setText("resultTSRA"+str(time.time())+".csv")
         if algidx==8:
             self.ui.result_filename.setText("resultRA"+str(time.time())+".csv")
+        if algidx==10:
+            self.ui.result_filename.setText("resultPSO"+str(time.time())+".csv")
+        if algidx==11:
+            self.ui.result_filename.setText("resultFA"+str(time.time())+".csv")
+        if algidx==12:
+            self.ui.result_filename.setText("resultBSO"+str(time.time())+".csv")
+        if algidx==13:
+            self.ui.result_filename.setText("resultBA"+str(time.time())+".csv")
         if algidx==2:
             self.ui.result_filename.setText("resultGreedy"+str(time.time())+".csv")
             self.ui.execNum.setEnabled(False)
